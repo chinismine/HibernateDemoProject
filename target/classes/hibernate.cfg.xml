@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.password">Passw0rd</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=chinservlet;encrypt=true;trustServerCertificate=true</property>
+		<property name="hibernate.connection.username">watcher</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<mapping resource="my/project/model/HouseBean.hbm.xml"/>
+		<mapping class="my.project.model.Department"/>
+		
+		<mapping class="my.project.model.Book"/>
+		<mapping class="my.project.model.BookDetail"/>
+		
+		<mapping class="my.project.model.Stock"/>
+		<mapping class="my.project.model.StockTransaction"/>
+		
+		<mapping class="my.project.model.Game"/>
+		<mapping class="my.project.model.Role"/>
+		
+	</session-factory>
+</hibernate-configuration>
